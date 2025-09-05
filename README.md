@@ -1,3 +1,4 @@
+
 # FinCDM
 
 ## 📊 Overview
@@ -10,8 +11,8 @@ This project introduces a new paradigm for financial LLM evaluation by enabling 
 
 **From Scores to Skills: A Cognitive Diagnosis Framework for Evaluating Financial Large Language Models**
 
-- 📖 Paper: [Hugging Face Paper Page](https://huggingface.co/papers/2412.06264)
-- 📝 arXiv: [arXiv:2508.13491](https://arxiv.org/abs/2508.13491)
+* 📖 Paper: [Hugging Face Paper Page](https://huggingface.co/papers/2508.13491)
+* 📝 arXiv: [arXiv:2508.13491](https://arxiv.org/abs/2508.13491)
 
 ### Abstract
 
@@ -23,53 +24,53 @@ We provide two comprehensive datasets for financial LLM evaluation:
 
 ### 1. FinCDM-FinEval-KQA
 
-- 🤗 **Hugging Face** : [NextGenWhu/FinCDM-FinEval-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA)
-- **Description** : A knowledge-skill annotated version of FinEval, covering comprehensive financial concepts and skills
-- **Features** :
-- Fine-grained knowledge labels
-- Multi-domain financial questions
-- Expert-validated annotations
+* 🤗  **Hugging Face** : [NextGenWhu/FinCDM-FinEval-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA)
+* **Description** : A knowledge-skill annotated version of FinEval, covering comprehensive financial concepts and skills
+* **Features** :
+* Fine-grained knowledge labels
+* Multi-domain financial questions
+* Expert-validated annotations
 
 ### 2. FinCDM-CPA-KQA
 
-- 🤗 **Hugging Face** : [NextGenWhu/FinCDM-CPA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA)
-- **Description** : The first cognitively informed financial evaluation dataset derived from the Certified Public Accountant (CPA) examination
-- **Features** :
-- Comprehensive coverage of real-world accounting and financial skills
-- Rigorously annotated by domain experts
-- High inter-annotator agreement
-- Fine-grained knowledge labels
+* 🤗  **Hugging Face** : [NextGenWhu/FinCDM-CPA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA)
+* **Description** : The first cognitively informed financial evaluation dataset derived from the Certified Public Accountant (CPA) examination
+* **Features** :
+* Comprehensive coverage of real-world accounting and financial skills
+* Rigorously annotated by domain experts
+* High inter-annotator agreement
+* Fine-grained knowledge labels
 
 ## 🚀 Features
 
-- [x] Cognitive diagnosis framework for financial LLMs
-- [x] Knowledge-skill level evaluation beyond simple scores
-- [x] Two comprehensive evaluation datasets (FinEval-KQA and CPA-KQA)
-- [ ] Evaluation scripts and tools (coming soon)
-- [ ] Model proficiency visualization
-- [ ] Skill acquisition pattern analysis
-- [ ] Behavioral cluster identification
+* [X] Cognitive diagnosis framework for financial LLMs
+* [X] Knowledge-skill level evaluation beyond simple scores
+* [X] Two comprehensive evaluation datasets (FinEval-KQA and CPA-KQA)
+* [ ] Evaluation scripts and tools (coming soon)
+* [ ] Model proficiency visualization
+* [ ] Skill acquisition pattern analysis
+* [ ] Behavioral cluster identification
 
 ## 🛠️ Key Innovations
 
 1. **Knowledge-Skill Level Diagnosis** : Unlike traditional benchmarks that provide single scores, FinCDM reveals specific strengths and weaknesses across different financial skills
 2. **Comprehensive Coverage** : Tests previously overlooked areas like:
 
-- Tax and regulatory reasoning
-- Deferred tax liabilities
-- Lease classification
-- Regulatory ratios
+* Tax and regulatory reasoning
+* Deferred tax liabilities
+* Lease classification
+* Regulatory ratios
 
 1. **Model Clustering Analysis** : Identifies latent associations between financial concepts and reveals distinct clusters of models with similar skill acquisition patterns
 
 ## 📋 Prerequisites
 
-- Python 3.8+
-- Git
-- PyTorch >= 1.12.0
-- Transformers >= 4.25.0
-- NumPy, Pandas, Scikit-learn
-- Required dependencies (see requirements.txt)
+* Python 3.8+
+* Git
+* PyTorch >= 1.12.0
+* Transformers >= 4.25.0
+* NumPy, Pandas, Scikit-learn
+* Required dependencies (see requirements.txt)
 
 ## 💻 Installation
 
@@ -92,7 +93,7 @@ from datasets import load_dataset
 # Load FinEval-KQA dataset
 fineval_data = load_dataset("NextGenWhu/FinCDM-FinEval-KQA")
 
-# Load CPA-KQA dataset
+# Load CPA-KQA dataset  
 cpa_data = load_dataset("NextGenWhu/FinCDM-CPA-KQA")
 ```
 
@@ -115,15 +116,15 @@ diagnosis = evaluator.diagnose(results)
 
 Our extensive experiments on **30+ LLMs** including:
 
-- Proprietary models (GPT-4, GPT-3.5, Claude)
-- Open-source models (LLaMA, Mistral, Qwen)
-- Domain-specific models (FinGPT, FinMA, FinQwen)
+* Proprietary models (GPT-4, GPT-3.5, Claude)
+* Open-source models (LLaMA, Mistral, Qwen)
+* Domain-specific models (FinGPT, FinMA, FinQwen)
 
 Key findings:
 
-- Reveals hidden knowledge gaps in state-of-the-art models
-- Identifies behavioral clusters among different model families
-- Uncovers specialization strategies in domain-specific models
+* Reveals hidden knowledge gaps in state-of-the-art models
+* Identifies behavioral clusters among different model families
+* Uncovers specialization strategies in domain-specific models
 
 ## 🤝 Contributing
 
@@ -154,22 +155,22 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Team
 
-- WHU NextGen Team
-- Contributors from Wuhan University
+* WHU NextGen Team
+* Contributors from Wuhan University
 
 ## 🔗 Links
 
-- **GitHub Repository** : [https://github.com/WHUNextGen/FinCDM](https://github.com/WHUNextGen/FinCDM)
-- **Paper** : [https://huggingface.co/papers/2412.06264](https://huggingface.co/papers/2412.06264)
-- **FinEval-KQA Dataset** : [https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA)
-- **CPA-KQA Dataset** : [https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA)
+* **GitHub Repository** : [https://github.com/WHUNextGen/FinCDM](https://github.com/WHUNextGen/FinCDM)
+* **Paper** : [https://huggingface.co/papers/2412.06264](https://huggingface.co/papers/2412.06264)
+* **FinEval-KQA Dataset** : [https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA)
+* **CPA-KQA Dataset** : [https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA)
 
 ## 📧 Contact
 
 For questions and feedback, please:
 
-- Open an issue on GitHub
-- Contact the WHU NextGen Team
+* Open an issue on GitHub
+* Contact the WHU NextGen Team
 
 ---
 
