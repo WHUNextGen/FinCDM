@@ -97,19 +97,23 @@ fineval_data = load_dataset("NextGenWhu/FinCDM-FinEval-KQA")
 cpa_data = load_dataset("NextGenWhu/FinCDM-CPA-KQA")
 ```
 
-### Running Evaluation (Coming Soon)
+### Running Evaluation 
 
 ```python
 from fincdm import FinCDMEvaluator
 
 # Initialize evaluator
-evaluator = FinCDMEvaluator()
+evaluator = FinCDMEvaluator(data_root=".")
 
 # Evaluate your model
-results = evaluator.evaluate(model, dataset="cpa-kqa")
+results = FinCDMEvaluator().evaluate(
+    q_path="",
+    a_path="",
+)
+print(results.metrics)
 
 # Get knowledge-skill diagnosis
-diagnosis = evaluator.diagnose(results)
+diagnosis = evaluator.diagnose(results，export_csv="SK_df.csv")
 ```
 
 ## 📊 Experimental Results
