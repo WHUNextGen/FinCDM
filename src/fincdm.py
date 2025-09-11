@@ -8,7 +8,6 @@ import re
 
 Array = np.ndarray
 
-# ================== SNMCF & Utilities（来自你的脚本，略作封装） ==================
 
 def snmcf(
     X: Array, Q: Array, r: int = 38, alpha: float = 1.0,
@@ -105,7 +104,6 @@ def compute_metrics(X_true: Array, X_pred: Array, thr: float = 0.5) -> Dict[str,
 
     return {"ACC": acc, "AUC": auc, "MSE": mse, "RMSE": rmse}
 
-# ================== 数据结构 ==================
 
 @dataclass
 class EvalResults:
@@ -116,14 +114,9 @@ class EvalResults:
     meta: Dict[str, Any]
     aux: Dict[str, Any]
 
-# ================== 评估器 ==================
+
 
 class FinCDMEvaluator:
-    """
-    统一评估器。无需外部 model：
-      - 若 model 为 None：直接用 SNMCF 复原 X_hat 作为预测并评估。
-      - 若传入 model（可选）：先尝试 `model.predict(R, Q)`，否则尝试可调用 `model(R, Q)`。
-    """
 
     def __init__(self, data_root: str = ".", snmcf_rank: int = 38):
         self.data_root = data_root
@@ -131,7 +124,6 @@ class FinCDMEvaluator:
 
     def evaluate(
         self,
-        model: Any = None,
         dataset: str = "cpa-kqa",
         *,
         q_path: Optional[str] = None,
@@ -143,14 +135,11 @@ class FinCDMEvaluator:
         R = R_df.to_numpy(float)  # (m, n)
         Q = Q_df.to_numpy(float)  # (m, k)
 
-        # 如果没有外部模型，就跑 SNMCF（你的原逻辑）
-        if model is None:
-            E, U, V = snmcf(R, Q, r=self.snmcf_rank, alpha=1.0, max_iter=200, verbose=verbose)
-            y_pred = predict_scores(E, U)
-            aux = {"E": E, "U": U, "V": V}
-        else:
-            y_pred = self._predict_with_fallback(model, R, Q)
-            aux = {}
+ 
+        E, U, V = snmcf(R, Q, r=self.snmcf_rank, alpha=1.0, max_iter=200, verbose=verbose)
+        y_pred = predict_scores(E, U)
+        aux = {"E": E, "U": U, "V": V}
+
 
         if binarise_threshold is not None:
             y_pred = np.clip(y_pred, 0.0, 1.0)
@@ -178,7 +167,7 @@ class FinCDMEvaluator:
         average_trials: bool = True,
         export_csv: Optional[str] = "SK_df.csv",
     ) -> Dict[str, Any]:
-        # 若 evaluate 时已跑过 SNMCF，可直接复用；否则此处再跑一次
+
         if all(k in results.aux for k in ("E", "U", "V")):
             U, V = results.aux["U"], results.aux["V"]
         else:
@@ -199,7 +188,7 @@ class FinCDMEvaluator:
 
         return {"SK_df": SK_df, "U": U, "V": V}
 
-    # ---------------- 内部方法 ----------------
+
     def _load_dataset(
         self, name: str, *, q_path: Optional[str], a_path: Optional[str]
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
@@ -222,11 +211,7 @@ class FinCDMEvaluator:
             y_pred = model.predict(R, Q)
         elif callable(model):
             y_pred = model(R, Q)
-        else:
-            # 没有可用模型时，退化为均值填充（但你一般不会用到）
-            mask = ~np.isnan(R)
-            mean = float(np.mean(R[mask])) if np.any(mask) else 0.0
-            y_pred = np.where(np.isnan(R), mean, R)
+
         y_pred = np.asarray(y_pred, dtype=float)
         if y_pred.shape != R.shape:
             raise ValueError(f"Prediction shape {y_pred.shape} != labels shape {R.shape}")
@@ -243,5 +228,6 @@ class FinCDMEvaluator:
 
         averaged = {name: SK_df.loc[rows].mean(axis=0) for name, rows in groups.items()}
         return pd.DataFrame(averaged).T
+
 
 
