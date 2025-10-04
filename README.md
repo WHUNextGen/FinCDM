@@ -1,7 +1,8 @@
-
 # FinCDM
 
 ## 📊 Overview
+
+![FinCDM](/fig/finCDM.png "点击查看大图")
 
 FinCDM (Financial Cognitive Diagnosis Model) is a comprehensive evaluation framework for financial large language models. It moves beyond traditional score-level evaluation by providing knowledge-skill level diagnosis, identifying what financial skills and knowledge models possess or lack.
 
@@ -70,7 +71,6 @@ We provide two comprehensive datasets for financial LLM evaluation:
 * PyTorch >= 1.12.0
 * Transformers >= 4.25.0
 * NumPy, Pandas, Scikit-learn
-* Required dependencies (see requirements.txt)
 
 ## 💻 Installation
 
@@ -97,7 +97,7 @@ fineval_data = load_dataset("NextGenWhu/FinCDM-FinEval-KQA")
 cpa_data = load_dataset("NextGenWhu/FinCDM-CPA-KQA")
 ```
 
-### Running Evaluation 
+### Running Evaluation
 
 ```python
 from fincdm import FinCDMEvaluator
