@@ -42,6 +42,15 @@ We provide two comprehensive datasets for financial LLM evaluation:
 * High inter-annotator agreement
 * Fine-grained knowledge labels
 
+### 3. FinCDM-CFA-KQA
+* 🤗 **Hugging Face** : [NextGenWhu/FinCDM-CFA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CFA-KQA)
+* **Description** : A specialized financial evaluation dataset derived from the Chartered Financial Analyst (CFA) curriculum, focusing on advanced investment knowledge and skills
+* **Features** :
+* In-depth coverage of portfolio management and ethics
+* Annotations by CFA charterholders
+* Varied question complexities
+* Fine-grained knowledge labels
+
 ## 🚀 Features
 
 * [X] Cognitive diagnosis framework for financial LLMs
