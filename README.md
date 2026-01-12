@@ -25,31 +25,38 @@ We provide two comprehensive datasets for financial LLM evaluation:
 
 ### 1. FinCDM-FinEval-KQA
 
-* 🤗  **Hugging Face** : [NextGenWhu/FinCDM-FinEval-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA)
-* **Description** : A knowledge-skill annotated version of FinEval, covering comprehensive financial concepts and skills
-* **Features** :
-* Fine-grained knowledge labels
-* Multi-domain financial questions
-* Expert-validated annotations
+- 🤗 **Hugging Face**: https://huggingface.co/datasets/NextGenWhu/FinCDM-FinEval-KQA  
+- **Description**:  
+  A knowledge–skill annotated extension of the FinEval benchmark, designed to support fine-grained evaluation of financial reasoning capabilities.
+- **Features**:
+  - Fine-grained financial knowledge and skill labels  
+  - Coverage of multiple financial sub-domains  
+  - Expert-validated annotations  
 
-### 2. FinCDM-CPA-KQA
+---
 
-* 🤗  **Hugging Face** : [NextGenWhu/FinCDM-CPA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CPA-KQA)
-* **Description** : The first cognitively informed financial evaluation dataset derived from the Certified Public Accountant (CPA) examination
-* **Features** :
-* Comprehensive coverage of real-world accounting and financial skills
-* Rigorously annotated by domain experts
-* High inter-annotator agreement
-* Fine-grained knowledge labels
+### 2. FinCDM-Fin-KQA
 
-### 3. FinCDM-CFA-KQA
-* 🤗 **Hugging Face** : [NextGenWhu/FinCDM-CFA-KQA](https://huggingface.co/datasets/NextGenWhu/FinCDM-CFA-KQA)
-* **Description** : A specialized financial evaluation dataset derived from the Chartered Financial Analyst (CFA) curriculum, focusing on advanced investment knowledge and skills
-* **Features** :
-* In-depth coverage of portfolio management and ethics
-* Annotations by CFA charterholders
-* Varied question complexities
-* Fine-grained knowledge labels
+- 🤗 **Hugging Face**: https://huggingface.co/datasets/NextGenWhu/FinCDM-Fin-KQA  
+- **Description**:  
+  A unified cognitively informed financial knowledge–skill evaluation dataset derived from professional certification examinations, integrating materials from both the Certified Public Accountant (CPA) and Chartered Financial Analyst (CFA) curricula.
+- **Composition**:
+  - **CFA-KQA**
+    - 123 evaluation questions  
+    - File: `CFA-KQA.json`  
+    - Focuses on advanced investment analysis, portfolio management, and professional ethics  
+  - **CPA-KQA**
+    - 1,050 training questions  
+      - File: `CPA-KQA-training.json`  
+    - 210 evaluation questions  
+      - File: `CPA-KQA-test.json`  
+    - Covers real-world accounting, auditing, and financial reporting skills  
+- **Features**:
+  - Comprehensive coverage of professional-level financial and accounting competencies  
+  - Fine-grained knowledge and skill annotations  
+  - Expert annotations with high inter-annotator agreement  
+  - Designed to support both training and rigorous evaluation settings  
+
 
 ## 🚀 Features
 
