@@ -2,7 +2,7 @@
 
 ## 📊 Overview
 
-![FinCDM](/fig/finCDM.png "点击查看大图")
+![FinCDM](/fig/FinCDM.png "点击查看大图")
 
 FinCDM (Financial Cognitive Diagnosis Model) is a comprehensive evaluation framework for financial large language models. It moves beyond traditional score-level evaluation by providing knowledge-skill level diagnosis, identifying what financial skills and knowledge models possess or lack.
 
